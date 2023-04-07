@@ -1,0 +1,245 @@
+body {
+	overflow: hidden;
+	background-color: #B73E3E;
+  }
+
+.desktop{
+	position: relative;
+	overflow: hidden;
+
+	background: #B73E3E;
+}
+  
+
+.login_container {
+	width: 100%;
+	min-height: 100vh;
+	background-color: #f5f5f5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.login_form_container {
+	position: relative;
+    width: 800px;
+    height: 795px;
+    top: -10px;
+    left: -10px;
+    
+
+    background: #FFFFFF;}
+
+.left {
+	flex: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.left h1{
+	color: #ED8F00;
+	text-transform: uppercase;
+}
+
+.form_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 200px;
+}
+
+.form_container h1 {
+	font-size: 40px;
+	margin-top: 0;
+}
+
+.input {
+	outline: none;
+	border: none;
+	width: 370px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: #edf5f3;
+	margin: 5px 0;
+	font-size: 14px;
+}
+
+.error_msg {
+	width: 370px;
+	padding: 15px;
+	margin: 5px 0;
+	font-size: 14px;
+	background-color: #f34646;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #B73E3E;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.right h1 {
+	margin-top: 0;
+	color: white;
+	font-size: 40px;
+	align-self: center;
+}
+
+
+.green_btn {
+	border: none;
+	outline: none;
+	padding: 12px 0;
+	background-color: white;
+	border-radius: 20px;
+	width: 180px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.white_btn{
+	border: none;
+	outline: none;
+	padding: 12px 0;
+	background-color: white;
+	border-radius: 20px;
+	width: 250px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+
+	position: absolute;
+	top: 700px;
+	left: 300px;
+}
+
+.green_btn {
+	background-color: #ED8F00;
+	color: white;
+	margin: 10px;
+}
+
+button {
+
+	align-items: center; 
+	justify-content: center; 
+	padding: 10px; 
+	margin: 2px; 
+	cursor: pointer;
+	
+  }
+  
+  button img {
+	width: 24px;
+	height: 24px; 
+	margin-right: 1px; 
+	
+  }
+  
+  .facebook {
+	background-color: #247df1; 
+	border: none;
+	margin-right: 10px; /* Add some space between the buttons */
+	border-radius: 50%; 
+	margin-top:33px;
+	width: 45px;
+	height: 45px; 
+  }
+  
+  .Google {
+	border-color: #B73E3E;
+	background-color: transparent;
+	border-width: 1px;
+	border-radius: 50%; 
+	width: 45px;
+	height: 45px; 
+
+  }
+  .tele{
+	background-color: gray; 
+	border: none;
+	margin-right: 10px; /* Add some space between the buttons */
+	border-radius: 50%; 
+	margin-top:33px;
+	width: 45px;
+	height: 45px; 
+
+  }
+  
+  .button-container {
+	display: flex; /* Use flexbox to make the buttons appear in one line */
+	align-items: center; /* Center the buttons vertically */
+	justify-content: center; /* Center the buttons horizontally */
+	margin-top: 80px; /* Add some top margin to the container */
+  }
+  .button_container h2 {
+	margin: 0;
+	font-size: 14px;
+	color: gray;
+	text-align: center;
+	margin-top: 15px;
+  }
+  .tel{
+	background-color:rgb(202, 202, 202) ; 
+	border: none;
+	margin-right: 20px; /* Add some space between the buttons */
+	border-radius: 50%; 
+	margin-top:33px;
+	width: 45px;
+	height: 45px; 
+	margin-left: 12px;
+   
+  }
+
+  .tel:hover{
+	opacity: 50%;
+	cursor: pointer;
+  }
+
+  .facebook:hover{
+	opacity: 50%;
+	cursor: pointer;
+  }
+
+  .Google:hover{
+	opacity: 50%;
+	cursor: pointer;
+  }
+
+  .imgbackground{
+    position: absolute;
+    width: 782px;
+    height: 845px;
+    left: 756px;
+    top: -80px;
+
+}
+
+.imgbackground h1 {
+	margin-top: 0;
+	color: white;
+	font-size: 40px;
+	align-self: center;
+}
+
+.jijibimg{
+    position: absolute;
+    width: fit-content;
+    height: 634px;
+
+    top: 50px;
+    left: 230px;
+}
