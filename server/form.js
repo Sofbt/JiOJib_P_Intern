@@ -42,13 +42,13 @@ router.post("/", upload.single('photo'), async (req, res) => {
       return res.status(400).json({ message: error.details[0].message });
     }
 
-    const { location, productName, description } = req.body;
+    const { location, productName, description, photo } = req.body;
 
     const newProduct = new Product({
       location,
       productName,
       description,
-      photo: req.file.path,
+      photo,
     });
 
     await newProduct.save();

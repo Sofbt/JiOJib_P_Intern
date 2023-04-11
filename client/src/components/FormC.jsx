@@ -5,9 +5,12 @@ import Img5 from './av.png';
 import  Profile from './pdp.jsx'
 import FormWithMap from "./Maps.jsx"
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { storage } from "../firebase.config";
+import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import { v4 } from "uuid"
 
 const React = require('react');
-const { useState } = React;
 
 
 const FormC = () => {
@@ -23,9 +26,19 @@ const FormC = () => {
     Delivred: false,
   });
   const [submitted, setSubmitted] = useState(false);
+  const [imageList, setImageList] = useState([])
+  const imageListRef = ref(storage, "images/")
 
+  const [imageUpload, setImage] = useState(null)
+  const uploadImage = () => {
+    if (imageUpload == null) return
+    const imageRef = ref(storage,`images/${imageUpload.name + v4()}`)
+    uploadBytes(imageRef, imageUpload).then(() => {
+      
+    })
+  }
 
-  
+   
   const [error, setError] = useState("");
 
   const handleChange = ({ currentTarget: input }) => {
@@ -63,13 +76,14 @@ const FormC = () => {
       formData.append('location', data.location);
       formData.append('productName', data.productName);
       formData.append('description', data.description);
-      formData.append('photo', data.photo);
+
+      if (imageUpload) {
+        const imageRef = ref(storage,`images/${imageUpload.name + v4()}`);
+        await uploadBytes(imageRef, imageUpload);
+        const downloadUrl = await getDownloadURL(imageRef);
+        formData.append('photo', downloadUrl);
+      }
   
-      // Construct the message object
-      const message = {
-        name: "Sender's Name", // Replace with the sender's name
-        message: `Location: ${data.location}, Product Name: ${data.productName}, Description: ${data.description}`,
-      };
   
       // Emit the message object
   
@@ -148,7 +162,9 @@ const FormC = () => {
 
     <div className="file-input-container">
       <label htmlFor="photo">Attach an Image</label>
-      <input type="file" id="photo" onChange={handleFileChange} accept="image/*" />
+      <input type="file" id="photo" onChange={(event) => {
+        setImage(event.target.files[0]);
+      }} accept="image/*" />
     </div>
 
     {error && <div>{error}</div>}
